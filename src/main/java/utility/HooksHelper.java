@@ -26,14 +26,12 @@ public class HooksHelper extends BaseUtil {
         WebDriverManager.chromedriver().clearPreferences();
         WebDriverManager.chromedriver().clearCache();
         WebDriverManager.chromedriver().setup();
-        /* In this if body is oprate on the env condition whether the env is local or server */
+        /* This if body is operate on the env condition whether the env is local or server */
         if (System.getProperty(Constant.HooksConstant.ENVIRONMENT, Constant.HooksConstant.SERVERENVIRONMENT).equalsIgnoreCase(Constant.HooksConstant.SERVERENVIRONMENT)) {
             driver = new ChromeDriver(options);
         } else {
             //**************** When your running script on local *********************//
             driver=new ChromeDriver();
-            // ********************** When you want run script slowly uncomment the following and comment the below ******************//
-            //driver = new MyChromeDriver();
         }
         return driver;
     }

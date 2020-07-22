@@ -1,5 +1,5 @@
-Feature: Login CRM
-  This feature deals with login functionality of CRM web
+Feature: Login Gmail
+  This feature deals with login functionality of Gmail
 
   @sanity @regression
   Scenario: Gmail Login with the valid username and password
