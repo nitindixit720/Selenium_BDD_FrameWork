@@ -15,16 +15,17 @@ public class HooksHelper extends BaseUtil {
 
     public static WebDriver openChromeDriver() {
         /* To run your project in headless mode we have created different drivers */
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        options.addArguments("--start-maximized");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--disable-gpu");
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--no-sandbox");
+//        options.addArguments("--headless");
+//        options.addArguments("--start-maximized");
+//        options.addArguments("--disable-dev-shm-usage");
+//        options.addArguments("--disable-gpu");
         /* Here we have used web driver manager concept were we are not maintaining the drivers in our project
         * We are just downloading the dependency in our POM */
-        WebDriverManager.chromedriver().clearPreferences();
-        WebDriverManager.chromedriver().clearCache();
+        ChromeOptions options = new ChromeOptions();
+        options.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
+        //WebDriver driver = new ChromeDriver(options);
         WebDriverManager.chromedriver().setup();
         /* This if body is operate on the env condition whether the env is local or server */
         if (System.getProperty(Constant.HooksConstant.ENVIRONMENT, Constant.HooksConstant.SERVERENVIRONMENT).equalsIgnoreCase(Constant.HooksConstant.SERVERENVIRONMENT)) {
@@ -37,8 +38,6 @@ public class HooksHelper extends BaseUtil {
     }
 
     public static WebDriver openFirefoxDriver() {
-        WebDriverManager.firefoxdriver().clearPreferences();
-        WebDriverManager.firefoxdriver().clearCache();
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
         return driver;

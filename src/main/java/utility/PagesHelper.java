@@ -14,6 +14,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.*;
 import java.util.List;
 
@@ -106,7 +107,7 @@ public class PagesHelper extends BaseUtil {
     public static void waitExplicit(WebElement element, String type, long waittime) {
         driver.manage().timeouts().implicitlyWait(10, SECONDS);
         System.out.println("Inside WaitExplicit " + element);
-        WebDriverWait wait = new WebDriverWait(driver, waittime);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         String CaseType = type;
         switch (CaseType.toLowerCase()) {
             case Constant.PagesHelperConstants.VISIBILITYOF:
@@ -134,7 +135,7 @@ public class PagesHelper extends BaseUtil {
     public static void waitExplicitElements(List<WebElement> elements, String type, long waittime) {
         driver.manage().timeouts().implicitlyWait(0, SECONDS);
         System.out.println("Inside waitExplicitElements ");
-        WebDriverWait wait = new WebDriverWait(driver, waittime);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         String CaseType = type;
         switch (CaseType.toLowerCase()) {
 
