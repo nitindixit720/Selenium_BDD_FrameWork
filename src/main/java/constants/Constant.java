@@ -30,7 +30,7 @@ public class Constant {
     // values (if in case you forget to pass it)
     public static class HooksConstant {
         public static final String URLKEY = "url";
-        public static final String DEFAULTURL = "Default base URL";
+        public static final String DEFAULTURL = "https://www.google.co.in/";
         public static final String ENVIRONMENT = "env";
         public static final String LOCALENVIRONMENT = "local";
         public static final String SERVERENVIRONMENT = "server";
